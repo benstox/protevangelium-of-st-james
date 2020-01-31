@@ -1,0 +1,10 @@
+syntax: glob
+
+*.log
+*.1
+*.1R
+*.*end
+*.aux
+*.eledsec1
+*.eledsec1R
+
