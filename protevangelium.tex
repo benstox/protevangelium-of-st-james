@@ -1,9 +1,6 @@
-\documentclass[12pt]{book} % use larger type; default would be 10pt
+\documentclass[10pt]{book}
 
-% usual packages loading:
-\usepackage{calc}
 \usepackage{fontspec}
-\usepackage{graphicx} % support the \includegraphics command and options
 \usepackage{fullpage} % to reduce the margins
 \usepackage{titlesec}
 \usepackage{lettrine}
@@ -14,8 +11,11 @@
 \setmainfont{EB Garamond}
 \newfontfamily{\greekfont}{GFS Artemisia}
 
-\eledsectnotoc{L}
-\eledsectmark{R}
+% hide reledpar line numbers
+\numberlinefalse
+% format reledpar paragraph/verse numbers
+\renewcommand{\thepstartL}{\textnormal{\textcolor{benred8}{\arabic{pstartL}. }}}
+\renewcommand{\thepstartR}{\textnormal{\textcolor{benred8}{\arabic{pstartR}. }}}
 
 % RED
 \definecolor{benred8}{HTML}{E82C00} 
@@ -29,30 +29,51 @@
 
 \begin{document}
 
-\chapter*{{\greekfont ΠΡΩΤΕΥΑΓΓΕΛΙΟΝ ΙΑΚΩΒΟΥ}}
+\title{\scshape{\greekfont ΠΡΩΤΕΥΑΓΓΕΛΙΟΝ ΙΑΚΩΒΟΥ}\\The Protevangelium of James}
+\author{ed. Bernard Stockermans}
+\date{A.D. MMXX}
+\maketitle
 
-The Birth of Mary the Holy Mother of God, and Very Glorious Mother of Jesus Christ.\footnote{This title is taken by Tischendorf from a manuscript of the eleventh century (Paris). At least seventeen other forms exist. The book is variously named by ancient writers. In the decree of Gelasius (A.D. 495) he condemns it as \textit{Evangelium nomine Jacobi minoris apocryphum}. The text of Tischendorf, here translated, is somewhat less diffuse than that of Fabricius, and is based on manuscript evidence. The variations are verbal and formal rather than material.\textemdash R.}
+\chapter*{}
+
+{\center\Large
+The Birth of Mary the Holy Mother of God, and Very Glorious Mother of Jesus Christ.\footnote{This title is taken by Tischendorf from a manuscript of the eleventh century (Paris). At least seventeen other forms exist. The book is variously named by ancient writers. In the decree of Gelasius (A.D. 495) he condemns it as \textit{Evangelium nomine Jacobi minoris apocryphum}. The text of Tischendorf, here translated, is somewhat less diffuse than that of Fabricius, and is based on manuscript evidence. The variations are verbal and formal rather than material.\textemdash R.}}
 
 \begin{pairs}
-\begin{Leftside}\beginnumbering
+\begin{Leftside}
+\beginnumbering
+\numberpstarttrue
+
 {\greekfont
 \input{greek}
 
 }
 
-\endnumbering\end{Leftside}
-\begin{Rightside}\beginnumbering
+\endnumbering
+\end{Leftside}
+
+\begin{Rightside}
+\beginnumbering
+\numberpstarttrue
+
 \input{english}
 
-\endnumbering\end{Rightside}
+\endnumbering
+\end{Rightside}
 \end{pairs}
 \Columns
+
+{\center\Large
+*
+
+* *
 
 {\greekfont
 ΓΕΝΕΣΙΣ ΜΑΡΙΑΣ, ΑΠΟΚΑΛΥΨΙΣ ΙΑΚΩΒ.
 
 Εἰρήνη τῷ γράψαντι καὶ τῷ ἀναγινώσκοντι.
 
+}
 }
 
 \end{document}
